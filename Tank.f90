@@ -11,7 +11,7 @@ CALL resolution(nrows,ncolumns)
 ALLOCATE (grid(nrows,ncolumns))
 grid = " "
 grid(nrows,:) = "="
-CALL system("cls")
+CALL system("clear")
 WRITE (*,*)
 WRITE (*,*)
 WRITE (*,*)
@@ -35,7 +35,7 @@ WRITE (*,*) "      Enter your Name (10 letter Maximum)"
 WRITE (*,*)
 READ (*,*) player_name
 DO
-CALL system("cls")
+CALL system("clear")
 WRITE (*,*)
 WRITE (*,*) "Choose a Level for Wind:  (L)ow  |  (M)edium  |  (H)igh"
 WRITE (*,*)
@@ -67,7 +67,7 @@ m = 0
 h_w = random_number()*(ncolumns/10)+10.0
 DO k = 1, ncolumns
 load_space = ncolumns/10
-CALL system("cls")
+CALL system("clear")
 WRITE (*,*)
 WRITE (*,*) "Generating Terrain..."
 WRITE (*,*)
@@ -154,7 +154,7 @@ DO i = NINT(h)+NINT(rise),nrows-1
 END DO
 h = h + rise
 END DO
-CALL system("cls")
+CALL system("clear")
 DO i = 1, nrows
   WRITE (*,*) (grid(i,j), j = 1, ncolumns)
 END DO
@@ -196,7 +196,7 @@ ELSE IF (k == 2 .AND. l == 1) THEN
 END IF
 IF (k == 3) EXIT
 END DO
-CALL system("cls")
+CALL system("clear")
 DO i = 1, nrows
   WRITE (*,*) (grid(i,j), j = 1, ncolumns)
 END DO
@@ -227,7 +227,7 @@ IF (menu_command == "A" .OR. menu_command == "a") EXIT
 IF (menu_command == "V" .OR. menu_command == "v") EXIT
 IF (menu_command == "F" .OR. menu_command == "f") EXIT
 IF (menu_command == "B" .OR. menu_command == "b") EXIT
-CALL system("cls")
+CALL system("clear")
 WRITE (*,*)
 WRITE (*,*) "This is not a valid option."
 WRITE (*,*)
@@ -237,7 +237,7 @@ READ (*,*)
 END DO
 IF (menu_command == "A" .OR. menu_command == "a") THEN
 DO
-  CALL system("cls")
+  CALL system("clear")
   WRITE (*,*)
   WRITE (*,18) angle
   18 FORMAT (" Your CURRENT Angle: ", I3)
@@ -260,7 +260,7 @@ DO
 END DO
 ELSE IF (menu_command == "V" .OR. menu_command == "v") THEN
 DO
-  CALL system("cls")
+  CALL system("clear")
   WRITE (*,*)
   WRITE (*,19) velocity
   19 FORMAT (" Your CURRENT Velocity: ", I3)
@@ -295,7 +295,7 @@ ELSE IF (menu_command == "F" .OR. menu_command == "f") THEN
   bomb = 0
   END IF
 END DO
-CALL system("cls")
+CALL system("clear")
 DO i = 1, nrows
   WRITE (*,*) (grid(i,j), j = 1, ncolumns)
 END DO
@@ -640,7 +640,7 @@ IMPLICIT NONE
 INTEGER, INTENT (IN) :: n_shots, angle, velocity, wind_speed, wind_direction, bomb
 INTEGER, INTENT (OUT) :: score
 CHARACTER(4) :: wind_display
-CALL system("cls")
+CALL system("clear")
 DO i = 1, nrows
   WRITE (*,*) (grid(i,j), j = 1, ncolumns)
 END DO
